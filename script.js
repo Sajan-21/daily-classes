@@ -99,4 +99,65 @@ console.log("spliced array 2 : ",arr);
     console.log(str);
 }
 
+//functions
+
+//named fns
+
+{
+    function named(){
+        console.log('named fns');
+    }
+
+    named();
+}
+
+//anonymous fns
+
+{
+    const fnsvariable1 = function(){
+        console.log("from anonymous");
+    }
+    fnsvariable1();
+}
+
+//arrow fns
+
+{
+    const fnsvariable2 = ()=> {
+        console.log("from arrow");
+    }
+
+    fnsvariable2();
+}
+
+// fns with arguments and parameters
+
+{
+    function argAndParaFns (a,b) {
+        console.log("a : ",a);
+        console.log("b : ",b);
+    }
+
+    argAndParaFns (10,20);
+}
+
+//callback and returning
+
+{
+    let fnsWithReturn = function callBack (printAandB){
+        printAandB ();
+
+        let done = function(){
+            console.log("value returned");
+        }
+
+        return done;
+    }
+
+    callBack(function fnsandb(){
+        console.log("a and b");
+    })
+}
+
+
 
