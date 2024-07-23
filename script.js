@@ -143,20 +143,52 @@ console.log("spliced array 2 : ",arr);
 
 //callback and returning
 
+// {
+//     let fnsWithReturn = function callBack (printAandB){
+//         printAandB ();
+
+//         let done = function(){
+//             console.log("value returned");
+//         }
+
+//         return done;
+//     }
+
+//     callBack(function (){
+//         console.log("a and b");
+//     });
+// }
+
+// call by value
+
 {
-    let fnsWithReturn = function callBack (printAandB){
-        printAandB ();
-
-        let done = function(){
-            console.log("value returned");
-        }
-
-        return done;
+    let a=10;
+    console.log(a);
+    function update(a) {
+        a=20;
+        console.log(a);
     }
+    update(a);
+    console.log(a);
 
-    callBack(function fnsandb(){
-        console.log("a and b");
-    })
+}
+
+// closure
+{
+    function outerfunction(){
+        let outerVariable = "outer function variable"
+        function innerfunction(){
+           function innerfunction1(){
+            console.log(outerVariable);
+           }
+           return innerfunction1;
+        }
+        return innerfunction;
+    
+    }
+    let result=outerfunction();
+    let result1=result();
+    result1();
 }
 
 
