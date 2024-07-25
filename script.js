@@ -190,6 +190,61 @@ console.log("spliced array 2 : ",arr);
     let result1=result();
     result1();
 }
+console.log('\n\n\n');
+
+//event handling
+
+{
+    let button = document.getElementById('btn');
+
+    button.addEventListener('click',function(){
+        console.log('button clicked');
+    });
+
+    button.addEventListener('mouseover',function () {
+        console.log('mouse over');
+    });
+
+    button.addEventListener('mouseout',function () {
+        console.log('mouse out');
+    });
+
+    button.addEventListener('mousedown',function () {
+        console.log('mouse down');
+    });
+
+    button.addEventListener('mouseup',function(){
+        console.log('mouse up');
+    });
+
+    button.addEventListener('mousemove',function () {
+        console.log('mouse moved');
+    });
+
+    button.addEventListener('mouseleave',function () {
+        console.log('mouse leave');
+    });
+
+    button.addEventListener('mouseenter',function () {
+        console.log('mouse entered');
+    });
+
+    let inp = document.getElementById('name');
+
+    inp.addEventListener('keyup',function(){
+        console.log('key upped');
+    })
+
+    inp.addEventListener('keydown',function(){
+        console.log('key downed');
+    })
+
+    inp.addEventListener('keypress',function(){
+        console.log('key pressed');
+    })
+
+    
+}
 
 
 
