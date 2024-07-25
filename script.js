@@ -246,5 +246,39 @@ console.log('\n\n\n');
     
 }
 
+//current time + recursive
 
+{
 
+    function putZero(value){
+        if(value<10){
+            value = '0'+value;
+        }else{
+            value;
+        }
+
+        return value;
+
+    }
+
+    function show(){
+        let dt=new Date();
+        console.log(dt);
+
+        let hr=dt.getHours();
+        console.log(hr);
+
+        if(hr>12){
+        console.log("pm");
+        }else{
+        console.log("am");
+        }
+        let time = document.getElementById('time');
+        console.log('time : ',time);
+        time.innerHTML = putZero(hr) + ':' + putZero(dt.getMinutes()) + ":" + putZero(dt.getSeconds());
+
+        setTimeout(show,1000);
+    }
+
+    show();
+}
