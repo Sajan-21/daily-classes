@@ -248,37 +248,112 @@ console.log('\n\n\n');
 
 //current time + recursive
 
+// {
+
+//     function putZero(value){
+//         if(value<10){
+//             value = '0'+value;
+//         }else{
+//             value;
+//         }
+
+//         return value;
+
+//     }
+
+//     function show(){
+//         let dt=new Date();
+//         console.log(dt);
+
+//         let hr=dt.getHours();
+//         console.log(hr);
+
+//         if(hr>12){
+//         console.log("pm");
+//         }else{
+//         console.log("am");
+//         }
+//         let time = document.getElementById('time');
+//         console.log('time : ',time);
+//         time.innerHTML = putZero(hr) + ':' + putZero(dt.getMinutes()) + ":" + putZero(dt.getSeconds());
+
+//         setTimeout(show,1000);
+//     }
+
+//     show();
+// }
+console.log("\n\n\n");
+
+//destructuring
+{
+    let arr=[1,2,3,4,5];
+    console.log('array : ',arr);
+
+    let [a,b,c,d,e] = arr;
+    console.log('a : ',a);
+    console.log("c : ",c);
+    console.log("e : ",e);
+
+    //metrix
+
+    let mtx = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9],
+    ]
+    console.log(mtx);
+
+    let [row1,row2,[g,h,i]] = mtx;
+    console.log("row 1 : ",row1);
+    console.log("row 2 : ",row2);
+    // console.log("row 3 : ",row3);
+    console.log("g : ",g);
+    console.log("h : ",h);
+    console.log("i : ",i);
+
+    let obj = {
+        name : "saj",
+        email : "saj@gmail.com",
+        address : {
+            city : "wki",
+            pincode : "680589",
+        }
+    }
+    let {name,email,address : {city,pincode}} = obj;
+    console.log("name : ",name);
+    console.log("city : ",city);
+ 
+}
+console.log("\n\n\n");
+
+
+//array methods
 {
 
-    function putZero(value){
-        if(value<10){
-            value = '0'+value;
-        }else{
-            value;
-        }
+    let arr = [1,2,3,4,5];
 
-        return value;
+    arr.forEach((item)=>{
+        console.log(item);
+    });
 
-    }
+    let resultFind = arr.find((item)=>{
+        return item > 3;
+    })
+    console.log("result of find : ",resultFind);
 
-    function show(){
-        let dt=new Date();
-        console.log(dt);
+    let resultFilter = arr.filter((item)=>{
+        return item > 3;
+    });
+    console.log("result of filter : ",resultFilter);
 
-        let hr=dt.getHours();
-        console.log(hr);
+    let resultMap = arr.map((item)=>{
+        return item;
+    });
+    console.log("result of map : ",resultMap);
 
-        if(hr>12){
-        console.log("pm");
-        }else{
-        console.log("am");
-        }
-        let time = document.getElementById('time');
-        console.log('time : ',time);
-        time.innerHTML = putZero(hr) + ':' + putZero(dt.getMinutes()) + ":" + putZero(dt.getSeconds());
+    let resultReduce = arr.reduce((total,item)=>{
+        return total+item;
+    },0);
+    console.log("result of reduce",resultReduce);
 
-        setTimeout(show,1000);
-    }
-
-    show();
 }
