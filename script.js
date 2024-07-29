@@ -357,3 +357,41 @@ console.log("\n\n\n");
     console.log("result of reduce",resultReduce);
 
 }
+console.log('\n\n\n');
+
+//this keyWord
+{
+
+    console.log("this : ",this);
+    console.log('\n');
+
+    let obj = {
+        name : "samsu",
+        email : "samsuvinsu@gmail.com",
+        age : 21,
+        printage : function (){
+            console.log("function execution started...");
+            console.log("age : ",this.age);
+            return 0;
+        }
+    }
+    console.log("obj : ",obj);
+    console.log("name : ",obj.name);
+    console.log("email : ",obj.email);
+    console.log("printage : ",obj.printage());
+    console.log('\n');
+
+    function greet(){
+        // console.log("message 1 : ",message1);
+        // console.log("message 2 : ",message2);
+
+        console.log("this inside the function greet : ",this);
+        console.log("this . name : ",this.name);
+
+    }
+    // greet.call(obj,"dhanush","aneetta");
+    // greet.apply(obj,[]);
+    let output = greet.bind(obj)
+    output();
+
+}
