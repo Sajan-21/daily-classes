@@ -395,3 +395,70 @@ console.log('\n\n\n');
     output();
 
 }
+console.log("\n\n\n");
+
+//constructor function
+{
+
+    function person(name,age,bounty){
+        this.name = name;
+        this.age = age;
+        this.bounty = bounty;
+
+        this.greetings = function () {
+            console.log(`hi ${this.name}, your age is ${this.age}.`);
+        }
+    }
+    let person1 = new person("garp",65);
+    person1.greetings();
+
+    person1.job = "navy admiral";
+    console.log("person 1 : ",person1);
+
+    let person2 = new person("garp",65,"5 billion");
+    console.log("person 2 : ",person2);
+
+
+    person.prototype.getBounty = function (){
+        console.log(`hi ${this.name}, your age is ${this.age} and your bounty is ${this.bounty}`);
+    }
+    person2.getBounty();
+
+
+}
+console.log("\n\n\n");
+
+//cunstructor in class
+{
+    class person{
+        name;
+        age;
+        bounty;
+
+        constructor(name,age,bounty){
+            this.name = name;
+            this.age = age;
+            this.bounty = bounty;
+        }
+
+        greetings = function () {
+            console.log(`hi ${this.name}, your age is ${this.age}.`);
+        }
+
+    }
+
+    let person1 = new person("sanji",22,"5 billion");
+    person1.greetings();
+
+    person1.bounty = "5 billion";
+    // console.log(person.bounty);
+
+    person.prototype.getbounty = function () {
+        console.log(`hi ${this.name}, your age is ${this.age}.and bounty ${this.bounty}`);
+    }
+
+    person1.getbounty();
+
+
+
+}
