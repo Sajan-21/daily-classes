@@ -38,6 +38,7 @@ console.log("spliced array : ",arr);
 
 arr.splice(2,0,200);
 console.log("spliced array 2 : ",arr);
+console.log("\n\n\n");
 
 //conditional-statements
 
@@ -53,6 +54,7 @@ console.log("spliced array 2 : ",arr);
     }
 
 }
+console.log("\n\n\n");
 
 //switch
 
@@ -72,6 +74,7 @@ console.log("spliced array 2 : ",arr);
         break;
     }
 }
+console.log("\n\n\n");
 
 //loop
 
@@ -98,6 +101,7 @@ console.log("spliced array 2 : ",arr);
     }
     console.log(str);
 }
+console.log("\n\n\n");
 
 //functions
 
@@ -110,6 +114,7 @@ console.log("spliced array 2 : ",arr);
 
     named();
 }
+console.log("\n");
 
 //anonymous fns
 
@@ -119,6 +124,7 @@ console.log("spliced array 2 : ",arr);
     }
     fnsvariable1();
 }
+console.log("\n");
 
 //arrow fns
 
@@ -129,6 +135,7 @@ console.log("spliced array 2 : ",arr);
 
     fnsvariable2();
 }
+console.log("\n");
 
 // fns with arguments and parameters
 
@@ -140,6 +147,7 @@ console.log("spliced array 2 : ",arr);
 
     argAndParaFns (10,20);
 }
+console.log("\n\n\n");
 
 //callback and returning
 
@@ -172,6 +180,7 @@ console.log("spliced array 2 : ",arr);
     console.log(a);
 
 }
+console.log("\n\n\n");
 
 // closure
 {
@@ -459,6 +468,77 @@ console.log("\n\n\n");
 
     person1.getbounty();
 
+}
+console.log("\n\n\n");
 
+// Inheritance
+
+{
+
+    class Animal{
+
+        name;
+
+        constructor(name){
+            this.name = name;
+        }
+
+        walking(){
+            console.log(`${this.name} is walking.`);
+        }
+    }
+
+    class Dog extends Animal {
+
+        color;
+
+        constructor (name,color) {
+            super(name);// Super keyword is used to access the parent class (class animal) constructor properties - rule.
+            this.color = color;
+        }
+
+        //method overriding
+        walking(){
+            console.log(`my ${this.color} coloured ${this.name} is running.`);
+        }
+
+    }
+
+    let dog1 = new Dog ("tommy","brown");
+    dog1.walking();
+
+
+}
+console.log("\n\n\n");
+
+//setters and getters
+{
+    class Cars{
+        name;
+        color;
+
+        constructor(name){
+            this.name = name;
+        }
+
+        info(){
+            console.log(`${this.color} ${this.name}`);
+        }
+
+        set Color(color){
+            this.color = color;
+        }
+
+        get Color(){
+            return this.color;
+        }
+
+    }
+
+
+    let car1 = new Cars("BMW");
+    car1.info();
+    car1.color = "blue";
+    car1.info();
 
 }
