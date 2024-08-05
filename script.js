@@ -607,6 +607,5 @@ console.log("\n\n\n");
     Black.onClick (function () {
         console.log("button clicked...");
     });
-
-
+    
 }
