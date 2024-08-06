@@ -609,3 +609,33 @@ console.log("\n\n\n");
     });
     
 }
+console.log("\n\n\n");
+
+//client server processes
+{
+
+    let xhr = new XMLHttpRequest ();
+    console.log(xhr);
+
+    xhr.open('get','https://jsonplaceholder.typicode.com/users');
+
+    let btn = document.getElementById('cs').onclick = function () {
+        xhr.send();
+    }
+
+    xhr.onreadystatechange = function () {
+        console.log("readyState : ",xhr.readyState);
+
+        if(xhr.readyState===4){
+            console.log(xhr.status);
+            if(xhr.response===200){
+                let response = xhr.response;
+                console.log(response);
+                console.log(typeof(response));
+
+                
+            }
+        }
+    }
+
+}
