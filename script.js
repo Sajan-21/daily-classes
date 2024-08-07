@@ -619,7 +619,7 @@ console.log("\n\n\n");
 
     xhr.open('get','https://jsonplaceholder.typicode.com/users');
 
-    let btn = document.getElementById('cs').onclick = function () {
+    document.getElementById('cs').onclick = function () {
         xhr.send();
     }
 
@@ -628,11 +628,35 @@ console.log("\n\n\n");
 
         if(xhr.readyState===4){
             console.log(xhr.status);
-            if(xhr.response===200){
+            if(xhr.status===200){
+
                 let response = xhr.response;
                 console.log(response);
                 console.log(typeof(response));
 
+                let datas = JSON.parse(response);
+                console.log("datas : ",datas);
+
+                let dataContainer = document.getElementById('dataContainer');
+                console.log("dataContainer : ",dataContainer);
+
+                let rows = '';
+                
+                for (let i  = 0 ; i< datas.length; i++) {
+                    rows = rows + `
+                    <tr>
+                    <td>${datas[i].name}</td>
+                    <td>${datas[i].username}</td>
+                    <td>${datas[i].email}</td>
+                    <td>${datas[i].website}</td>
+                    </tr>
+                    `
+
+                }
+
+                console.log("rows : ",rows);
+
+                dataContainer.innerHTML = rows;
                 
             }
         }
