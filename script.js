@@ -663,3 +663,66 @@ console.log("\n\n\n");
     }
 
 }
+console.log("\n\n\n");
+
+//regular expressions
+{
+    let str1 = "the cat is white color";
+    let str2 = "i am 21 years old";
+    let str3 = "rat eats fish";
+    let str4 = `
+    hello
+    good meat
+    is always good
+    hai 
+    `
+
+    const regexp1 = /a/;
+    const result1 = regexp1.test(str1); // checking the letter a is present in str1 or not
+    console.log(result1); //result is true
+    
+    const regexp2 = /A/i;
+    const result2 = regexp2.test(str1); // checking the letter A is present or not. I stands for case insensitive.
+    console.log(result2); //result is true
+
+    const regexp3 = /[abc]y/;
+    const result3 = regexp3.test(str2); // checking the letter A is present or not. I stands for case insensitive.
+    console.log(result3); //result is true
+
+    const regexp7 = /^rat/i;
+    const result7 = regexp7.test(str3); // check if str3 starts with 'rat'
+    console.log(result7);//result true
+
+    const regexp8 = /fish$/i;
+    const result8 = regexp8.test(str3); // check if str3 ends with 'fish'
+    console.log(result8);//result true
+
+    const regexp9 = /^good/im;
+    const result9 = regexp9.test(str4); // m-flag represents multiline matching
+    console.log("result 9 : ",result9); //result false
+
+    const regexp10 = /good$/im;
+    const result10 = regexp10.test(str4); // m-flag represents multiline matching
+    console.log("result 10 : ",result10); // result true
+
+    const regexp11 = /fishes?/im;//word or character before ? is optional for matching
+    const result11 = regexp11.test(str3);//it matches both fish and fishes, 's' is optional
+    console.log("result 11 : ",result11);// false
+
+    const regexp12 = /fish(es)?/im;
+    const result12 = regexp12.test(str3);// '()' represents groups
+    console.log("result 12 : ",result12);// true
+
+    const regexp13 = /fishes*$/i;
+    const result13 = regexp13.test(str3);//it matches both fishes and fish, 'es' is optional
+    console.log("result 13 : ",result13);// false
+
+    const regexp14 = /fishes+$/i;
+    const result14 = regexp14.test(str3);// the letter before '+' also can occur multiple times in a string, but atleast one occurance is required
+    console.log("result 14 : ",result14);// false
+
+    const regexp15 = /fish.$/i;
+    const result15 = regexp15.test(str3);// here it matches fishe, '.' represents any type of character 
+    console.log("result 15 : ",result15);
+    
+}
