@@ -724,5 +724,49 @@ console.log("\n\n\n");
     const regexp15 = /fish.$/i;
     const result15 = regexp15.test(str3);// here it matches fishe, '.' represents any type of character 
     console.log("result 15 : ",result15);
-    
+
+    let str5 = "hello.world"
+
+    const regexp23 = /L{2}o$/i; // "o" should be exactly after 2 L's.
+    const result23 = regexp23.test(str5);
+    console.log("result 23 : ",result23);
+
+    const regexp24 = /L{2,4}o$/i; // 'o' should be exactly after between 2 to 4 L's
+    const result24 = regexp24.test(str5);
+    console.log("result 24 : ",result24);
+
+    const regexp25 = /HEL{2,4}o$/i; // 'o' should be exactly after between 2 to 4 L's and 'o' is required
+    const result25 = regexp25.test(str5);
+    console.log("result 25 : ",result25);
+
+    const regexp26 = /Hel{2,}o$/i; // 2 or more 'L' is required
+    const result26 = regexp26.test(str5);
+    console.log("result 26 : ",result26);
+
+    const regexp27 = /\d/i; // if there is any digits, it will be true, else it will be false.
+    const result27 = regexp26.test(str5);
+    console.log("result 27 : ",result27);
+
+    const regexp28 = /\D/i; // if there is any non digits it will be true, if there is only digits it will be falls
+    const result28 = regexp28.test(str5);
+    console.log("result 28 : ",result28);
+
+    const regexp29 = /./i; // if there is a '.' or anything it will match
+    const result29 = regexp29.test(str5);
+    console.log("result 29 : ",result29);
+
+    const regexp30 = /\./; // if there is any '.' in the string it match, else it will be false
+    const result30 = regexp30.test(str5);
+    console.log("result 30 : ",result30);
+
+    // date validation
+
+    //1
+
+    let str6 = '15-10-2002';
+
+    const regexpForDate = /^\d{1,2}-\d{1,2}-\d{4}$/i; // string should start with 1 to 2 digits, then after '-' 1 to 2 digits, then after '-' string ends with 4 digits.
+    const result31 = regexpForDate.test(str6);
+    console.log("result 31 : ",result31);
+
 }
